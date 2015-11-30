@@ -56,7 +56,7 @@ class XEditableMixin(object):
             else:
                 return HttpResponseBadRequest("Invalid field name")
         else:
-            if field_name not in self.get_datatable().config['columns']:
+            if field_name not in self.get_datatable().columns:
                 return HttpResponseBadRequest("Invalid field name")
 
         field = self.model._meta.get_field_by_name(field_name)[0]
